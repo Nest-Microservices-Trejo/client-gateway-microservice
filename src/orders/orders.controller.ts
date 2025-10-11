@@ -12,12 +12,13 @@ import {
 } from '@nestjs/common';
 
 import { ClientProxy } from '@nestjs/microservices';
-import { NATS_SERVICE } from 'src/config/services';
+
 import { CreateOrderDto, OrderPaginationDto } from './dto';
 import { catchError } from 'rxjs';
-import { rpcErrorHandler } from 'src/common/exceptions/rpc-error-handler.exception';
 
 import { StatusDto } from './dto/status.dto';
+import { NATS_SERVICE } from '../config/services';
+import { rpcErrorHandler } from '../common/exceptions/rpc-error-handler.exception';
 
 @Controller('orders')
 export class OrdersController {
